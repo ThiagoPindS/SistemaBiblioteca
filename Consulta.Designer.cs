@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblPagina = new Label();
+            lblTelaDeConsulta = new Label();
             dataGridView1 = new DataGridView();
             txtFTitulo = new TextBox();
             cbxFStatus = new ComboBox();
@@ -42,55 +42,59 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // lblPagina
+            // lblTelaDeConsulta
             // 
-            lblPagina.AutoSize = true;
-            lblPagina.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPagina.Location = new Point(70, 9);
-            lblPagina.Name = "lblPagina";
-            lblPagina.Size = new Size(264, 45);
-            lblPagina.TabIndex = 12;
-            lblPagina.Text = "Tela de Consulta";
+            lblTelaDeConsulta.AutoSize = true;
+            lblTelaDeConsulta.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTelaDeConsulta.Location = new Point(80, 12);
+            lblTelaDeConsulta.Name = "lblTelaDeConsulta";
+            lblTelaDeConsulta.Size = new Size(330, 54);
+            lblTelaDeConsulta.TabIndex = 12;
+            lblTelaDeConsulta.Text = "Tela de Consulta";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 183);
+            dataGridView1.Location = new Point(14, 244);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(363, 198);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(415, 264);
             dataGridView1.TabIndex = 13;
             // 
             // txtFTitulo
             // 
-            txtFTitulo.Location = new Point(160, 101);
+            txtFTitulo.Location = new Point(183, 135);
+            txtFTitulo.Margin = new Padding(3, 4, 3, 4);
             txtFTitulo.Name = "txtFTitulo";
-            txtFTitulo.Size = new Size(121, 23);
+            txtFTitulo.Size = new Size(138, 27);
             txtFTitulo.TabIndex = 14;
             // 
             // cbxFStatus
             // 
             cbxFStatus.FormattingEnabled = true;
             cbxFStatus.Items.AddRange(new object[] { "Disponível", "Emprestado", "Todos" });
-            cbxFStatus.Location = new Point(160, 139);
+            cbxFStatus.Location = new Point(183, 185);
+            cbxFStatus.Margin = new Padding(3, 4, 3, 4);
             cbxFStatus.Name = "cbxFStatus";
-            cbxFStatus.Size = new Size(121, 23);
+            cbxFStatus.Size = new Size(138, 28);
             cbxFStatus.TabIndex = 15;
             // 
             // lblFTitulo
             // 
             lblFTitulo.AutoSize = true;
-            lblFTitulo.Location = new Point(105, 109);
+            lblFTitulo.Location = new Point(120, 145);
             lblFTitulo.Name = "lblFTitulo";
-            lblFTitulo.Size = new Size(37, 15);
+            lblFTitulo.Size = new Size(47, 20);
             lblFTitulo.TabIndex = 16;
             lblFTitulo.Text = "Título";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(105, 142);
+            label1.Location = new Point(120, 189);
             label1.Name = "label1";
-            label1.Size = new Size(39, 15);
+            label1.Size = new Size(49, 20);
             label1.TabIndex = 17;
             label1.Text = "Status";
             // 
@@ -98,17 +102,18 @@
             // 
             lblFiltro.AutoSize = true;
             lblFiltro.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFiltro.Location = new Point(165, 63);
+            lblFiltro.Location = new Point(189, 84);
             lblFiltro.Name = "lblFiltro";
-            lblFiltro.Size = new Size(61, 21);
+            lblFiltro.Size = new Size(76, 28);
             lblFiltro.TabIndex = 18;
             lblFiltro.Text = "Filtros:";
             // 
             // btnRemover
             // 
-            btnRemover.Location = new Point(141, 398);
+            btnRemover.Location = new Point(161, 531);
+            btnRemover.Margin = new Padding(3, 4, 3, 4);
             btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(98, 23);
+            btnRemover.Size = new Size(112, 31);
             btnRemover.TabIndex = 19;
             btnRemover.Text = "Remover Livro";
             btnRemover.UseVisualStyleBackColor = true;
@@ -116,18 +121,20 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(34, 413);
+            btnEditar.Location = new Point(39, 551);
+            btnEditar.Margin = new Padding(3, 4, 3, 4);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
+            btnEditar.Size = new Size(86, 31);
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar Livro";
             btnEditar.UseVisualStyleBackColor = true;
             // 
             // btnStatus
             // 
-            btnStatus.Location = new Point(269, 413);
+            btnStatus.Location = new Point(307, 551);
+            btnStatus.Margin = new Padding(3, 4, 3, 4);
             btnStatus.Name = "btnStatus";
-            btnStatus.Size = new Size(87, 23);
+            btnStatus.Size = new Size(99, 31);
             btnStatus.TabIndex = 21;
             btnStatus.Text = "Alterar Status";
             btnStatus.UseVisualStyleBackColor = true;
@@ -135,9 +142,10 @@
             // btnCadastro
             // 
             btnCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastro.Location = new Point(33, 456);
+            btnCadastro.Location = new Point(38, 608);
+            btnCadastro.Margin = new Padding(3, 4, 3, 4);
             btnCadastro.Name = "btnCadastro";
-            btnCadastro.Size = new Size(328, 68);
+            btnCadastro.Size = new Size(375, 91);
             btnCadastro.TabIndex = 22;
             btnCadastro.Text = "Voltar ao Cadastro";
             btnCadastro.UseVisualStyleBackColor = true;
@@ -145,9 +153,9 @@
             // 
             // Consulta
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 539);
+            ClientSize = new Size(442, 719);
             Controls.Add(btnCadastro);
             Controls.Add(btnStatus);
             Controls.Add(btnEditar);
@@ -158,7 +166,8 @@
             Controls.Add(cbxFStatus);
             Controls.Add(txtFTitulo);
             Controls.Add(dataGridView1);
-            Controls.Add(lblPagina);
+            Controls.Add(lblTelaDeConsulta);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Consulta";
             Text = "Consulta";
             Activated += Consulta_Load;
@@ -169,7 +178,7 @@
 
         #endregion
 
-        private Label lblPagina;
+        private Label lblTelaDeConsulta;
         private DataGridView dataGridView1;
         private TextBox txtFTitulo;
         private ComboBox cbxFStatus;

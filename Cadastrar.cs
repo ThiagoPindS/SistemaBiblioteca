@@ -1,30 +1,20 @@
+using Prova_POO_Abril_Ian_Pereira.Classes;
+
 namespace Prova_POO_Abril_Ian_Pereira
 {
     public partial class Cadastrar : Form
     {
-        public Consulta? josoe { get; set; }
+        List<Livro> livros = new List<Livro>();
         public Cadastrar()
         {
             InitializeComponent();
-
         }
-
-        private void Cadastrar_Load_1(object sender, EventArgs e)
+        private void btnCadastrarLivro_Click(object sender, EventArgs e)
         {
-            josoe = new Consulta();
+            livros.Add(new Livro() { Titulo = txtTitulo.Text, Autor = txtAutor.Text, AnoDaPublicacao = txtAno.Text, Emprestado = cbxStatus.SelectedText });
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLimpa_Click(object sender, EventArgs e)
+        private void btnLimparCampos_Click(object sender, EventArgs e)
         {
             txtTitulo.Clear();
             txtAno.Clear();
@@ -35,8 +25,13 @@ namespace Prova_POO_Abril_Ian_Pereira
         private void btnConsulta_Click(object sender, EventArgs e)
         {
             this.Hide();
-            josoe.ShowDialog();
-            //this.Show();
+            Consulta consulta = new Consulta();
+            consulta.ShowDialog();
+
+            if (consulta != null)
+            {
+                this.Show();
+            }
         }
     }
 }

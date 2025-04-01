@@ -34,140 +34,149 @@
             cbxStatus = new ComboBox();
             lblTitulo = new Label();
             lblAutor = new Label();
-            lblAno = new Label();
+            lblAnoDaPublicacao = new Label();
             lblStatus = new Label();
-            btnCadastra = new Button();
-            btnLimpa = new Button();
-            btnConsulta = new Button();
-            lblPagina = new Label();
+            btnCadastrarLivro = new Button();
+            btnLimparCampos = new Button();
+            btnConsultaDeLivros = new Button();
+            lblTelaDeCadastro = new Label();
             SuspendLayout();
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(162, 116);
+            txtTitulo.Location = new Point(155, 91);
+            txtTitulo.Margin = new Padding(3, 4, 3, 4);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(125, 23);
+            txtTitulo.Size = new Size(191, 27);
             txtTitulo.TabIndex = 0;
             // 
             // txtAutor
             // 
-            txtAutor.Location = new Point(162, 174);
+            txtAutor.Location = new Point(155, 124);
+            txtAutor.Margin = new Padding(3, 4, 3, 4);
             txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(125, 23);
+            txtAutor.Size = new Size(191, 27);
             txtAutor.TabIndex = 1;
             // 
             // txtAno
             // 
-            txtAno.Location = new Point(162, 237);
+            txtAno.Location = new Point(155, 159);
+            txtAno.Margin = new Padding(3, 4, 3, 4);
             txtAno.Name = "txtAno";
-            txtAno.Size = new Size(125, 23);
+            txtAno.Size = new Size(191, 27);
             txtAno.TabIndex = 2;
             // 
             // cbxStatus
             // 
             cbxStatus.FormattingEnabled = true;
             cbxStatus.Items.AddRange(new object[] { "Disponível", "Emprestado" });
-            cbxStatus.Location = new Point(162, 293);
+            cbxStatus.Location = new Point(155, 194);
+            cbxStatus.Margin = new Padding(3, 4, 3, 4);
             cbxStatus.Name = "cbxStatus";
-            cbxStatus.Size = new Size(125, 23);
+            cbxStatus.Size = new Size(191, 28);
             cbxStatus.TabIndex = 3;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(116, 116);
+            lblTitulo.Location = new Point(12, 98);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(40, 15);
+            lblTitulo.Size = new Size(50, 20);
             lblTitulo.TabIndex = 4;
             lblTitulo.Text = "Título:";
             // 
             // lblAutor
             // 
             lblAutor.AutoSize = true;
-            lblAutor.Location = new Point(116, 177);
+            lblAutor.Location = new Point(13, 131);
             lblAutor.Name = "lblAutor";
-            lblAutor.Size = new Size(40, 15);
+            lblAutor.Size = new Size(49, 20);
             lblAutor.TabIndex = 5;
             lblAutor.Text = "Autor:";
             // 
-            // lblAno
+            // lblAnoDaPublicacao
             // 
-            lblAno.AutoSize = true;
-            lblAno.Location = new Point(47, 240);
-            lblAno.Name = "lblAno";
-            lblAno.Size = new Size(109, 15);
-            lblAno.TabIndex = 6;
-            lblAno.Text = "Ano da Publicação:";
+            lblAnoDaPublicacao.AutoSize = true;
+            lblAnoDaPublicacao.Location = new Point(13, 166);
+            lblAnoDaPublicacao.Name = "lblAnoDaPublicacao";
+            lblAnoDaPublicacao.Size = new Size(136, 20);
+            lblAnoDaPublicacao.TabIndex = 6;
+            lblAnoDaPublicacao.Text = "Ano da Publicação:";
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(116, 296);
+            lblStatus.Location = new Point(13, 202);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(42, 15);
+            lblStatus.Size = new Size(52, 20);
             lblStatus.TabIndex = 7;
             lblStatus.Text = "Status:";
             // 
-            // btnCadastra
+            // btnCadastrarLivro
             // 
-            btnCadastra.Location = new Point(24, 352);
-            btnCadastra.Name = "btnCadastra";
-            btnCadastra.Size = new Size(132, 56);
-            btnCadastra.TabIndex = 8;
-            btnCadastra.Text = "Cadastrar Livro";
-            btnCadastra.UseVisualStyleBackColor = true;
+            btnCadastrarLivro.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCadastrarLivro.Location = new Point(12, 243);
+            btnCadastrarLivro.Margin = new Padding(3, 4, 3, 4);
+            btnCadastrarLivro.Name = "btnCadastrarLivro";
+            btnCadastrarLivro.Size = new Size(254, 75);
+            btnCadastrarLivro.TabIndex = 8;
+            btnCadastrarLivro.Text = "Cadastrar Livro";
+            btnCadastrarLivro.UseVisualStyleBackColor = true;
+            btnCadastrarLivro.Click += btnCadastrarLivro_Click;
             // 
-            // btnLimpa
+            // btnLimparCampos
             // 
-            btnLimpa.Location = new Point(214, 352);
-            btnLimpa.Name = "btnLimpa";
-            btnLimpa.Size = new Size(138, 56);
-            btnLimpa.TabIndex = 9;
-            btnLimpa.Text = "Limpar Campos";
-            btnLimpa.UseVisualStyleBackColor = true;
-            btnLimpa.Click += btnLimpa_Click;
+            btnLimparCampos.Location = new Point(272, 243);
+            btnLimparCampos.Margin = new Padding(3, 4, 3, 4);
+            btnLimparCampos.Name = "btnLimparCampos";
+            btnLimparCampos.Size = new Size(74, 75);
+            btnLimparCampos.TabIndex = 9;
+            btnLimparCampos.Text = "Limpar Campos";
+            btnLimparCampos.UseVisualStyleBackColor = true;
+            btnLimparCampos.Click += btnLimparCampos_Click;
             // 
-            // btnConsulta
+            // btnConsultaDeLivros
             // 
-            btnConsulta.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnConsulta.Location = new Point(24, 442);
-            btnConsulta.Name = "btnConsulta";
-            btnConsulta.Size = new Size(328, 68);
-            btnConsulta.TabIndex = 10;
-            btnConsulta.Text = "Ir para Consulta";
-            btnConsulta.UseVisualStyleBackColor = true;
-            btnConsulta.Click += btnConsulta_Click;
+            btnConsultaDeLivros.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConsultaDeLivros.Location = new Point(12, 337);
+            btnConsultaDeLivros.Margin = new Padding(3, 4, 3, 4);
+            btnConsultaDeLivros.Name = "btnConsultaDeLivros";
+            btnConsultaDeLivros.Size = new Size(333, 75);
+            btnConsultaDeLivros.TabIndex = 10;
+            btnConsultaDeLivros.Text = "ConsultaDeLivros";
+            btnConsultaDeLivros.UseVisualStyleBackColor = true;
+            btnConsultaDeLivros.Click += btnConsulta_Click;
             // 
-            // lblPagina
+            // lblTelaDeCadastro
             // 
-            lblPagina.AutoSize = true;
-            lblPagina.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPagina.Location = new Point(64, 18);
-            lblPagina.Name = "lblPagina";
-            lblPagina.Size = new Size(267, 45);
-            lblPagina.TabIndex = 11;
-            lblPagina.Text = "Tela de Cadastro";
+            lblTelaDeCadastro.AutoSize = true;
+            lblTelaDeCadastro.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTelaDeCadastro.Location = new Point(12, 9);
+            lblTelaDeCadastro.Name = "lblTelaDeCadastro";
+            lblTelaDeCadastro.Size = new Size(334, 54);
+            lblTelaDeCadastro.TabIndex = 11;
+            lblTelaDeCadastro.Text = "Tela de Cadastro";
             // 
             // Cadastrar
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(387, 539);
-            Controls.Add(lblPagina);
-            Controls.Add(btnConsulta);
-            Controls.Add(btnLimpa);
-            Controls.Add(btnCadastra);
+            ClientSize = new Size(360, 424);
+            Controls.Add(lblTelaDeCadastro);
+            Controls.Add(btnConsultaDeLivros);
+            Controls.Add(btnLimparCampos);
+            Controls.Add(btnCadastrarLivro);
             Controls.Add(lblStatus);
-            Controls.Add(lblAno);
+            Controls.Add(lblAnoDaPublicacao);
             Controls.Add(lblAutor);
             Controls.Add(lblTitulo);
             Controls.Add(cbxStatus);
             Controls.Add(txtAno);
             Controls.Add(txtAutor);
             Controls.Add(txtTitulo);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Cadastrar";
-            Text = "Form1";
-            Activated += Cadastrar_Load_1;
+            Text = "BiblioSystem";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -180,11 +189,11 @@
         private ComboBox cbxStatus;
         private Label lblTitulo;
         private Label lblAutor;
-        private Label lblAno;
+        private Label lblAnoDaPublicacao;
         private Label lblStatus;
-        private Button btnCadastra;
-        private Button btnLimpa;
-        private Button btnConsulta;
-        private Label lblPagina;
+        private Button btnCadastrarLivro;
+        private Button btnLimparCampos;
+        private Button btnConsultaDeLivros;
+        private Label lblTelaDeCadastro;
     }
 }
