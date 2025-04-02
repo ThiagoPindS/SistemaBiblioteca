@@ -15,3 +15,21 @@ C:\Users\Diva\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\
 C:\Users\Diva\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\ref\Prova POO Abril Ian Pereira.dll
 C:\Users\Diva\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Consulta.resources
 C:\Users\Diva\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Cadastrar.resources
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\bin\Debug\net8.0-windows\Prova POO Abril Ian Pereira.exe
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\bin\Debug\net8.0-windows\Prova POO Abril Ian Pereira.deps.json
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\bin\Debug\net8.0-windows\Prova POO Abril Ian Pereira.runtimeconfig.json
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\bin\Debug\net8.0-windows\Prova POO Abril Ian Pereira.dll
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\bin\Debug\net8.0-windows\Prova POO Abril Ian Pereira.pdb
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Cadastrar.resources
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Consulta.resources
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.csproj.GenerateResource.cache
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.AssemblyInfoInputs.cache
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.AssemblyInfo.cs
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.csproj.CoreCompileInputs.cache
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.dll
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\refint\Prova POO Abril Ian Pereira.dll
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.pdb
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.genruntimeconfig.cache
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\ref\Prova POO Abril Ian Pereira.dll
+C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Atencao.resources
