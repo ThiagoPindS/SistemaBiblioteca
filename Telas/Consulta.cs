@@ -36,7 +36,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -48,9 +48,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnAlterarStatus_Click(object sender, EventArgs e)
         {
-            var Celula = dgvAcervo.CurrentRow.Index;
 
-            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
         }
 
         public void AtualiazarAcervo()

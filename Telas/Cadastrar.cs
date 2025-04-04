@@ -19,11 +19,13 @@ namespace Prova_POO_Abril_Ian_Pereira
         {
             if (txtTitulo.Text != "" && txtAutor.Text != "" && txtAno.Text != "" && cbxStatus.SelectedItem.ToString() != "")
             {
-                livros.Add(new Livro() { Titulo = txtTitulo.Text, Autor = txtAutor.Text, AnoDaPublicacao = txtAno.Text, Status = cbxStatus.SelectedItem.ToString() });
+                livros.Add(new Livro() { ID = livros.Count, Titulo = txtTitulo.Text, Autor = txtAutor.Text, AnoDaPublicacao = txtAno.Text, Status = cbxStatus.SelectedItem.ToString() });
 
                 Atencao atencao = new Atencao();
                 Atencao.instance.lblAviso.Text = "Livro cadastrado com sucesso";
                 atencao.ShowDialog();
+
+                LimparCampos();
             }
             else
             {
@@ -35,10 +37,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnLimparCampos_Click(object sender, EventArgs e)
         {
-            txtTitulo.Clear();
-            txtAno.Clear();
-            txtAutor.Clear();
-            cbxStatus.SelectedItem = null;
+            LimparCampos();
         }
 
         private void btnConsulta_Click(object sender, EventArgs e)
@@ -51,6 +50,14 @@ namespace Prova_POO_Abril_Ian_Pereira
             {
                 this.Show();
             }
+        }
+
+        public void LimparCampos()
+        {
+            txtTitulo.Clear();
+            txtAno.Clear();
+            txtAutor.Clear();
+            cbxStatus.SelectedItem = null;
         }
     }
 }

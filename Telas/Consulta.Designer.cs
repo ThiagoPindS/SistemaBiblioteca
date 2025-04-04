@@ -39,6 +39,7 @@
             lblStatus = new Label();
             cbxStatus = new ComboBox();
             btnConsultar = new Button();
+            ID = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvAcervo).BeginInit();
             SuspendLayout();
             // 
@@ -55,8 +56,10 @@
             // dgvAcervo
             // 
             dgvAcervo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAcervo.Columns.AddRange(new DataGridViewColumn[] { ID });
             dgvAcervo.Location = new Point(12, 115);
             dgvAcervo.Name = "dgvAcervo";
+            dgvAcervo.ReadOnly = true;
             dgvAcervo.RowHeadersWidth = 51;
             dgvAcervo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAcervo.Size = new Size(442, 266);
@@ -149,6 +152,12 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -185,5 +194,6 @@
         private Label lblStatus;
         private ComboBox cbxStatus;
         private Button btnConsultar;
+        private DataGridViewTextBoxColumn ID;
     }
 }
