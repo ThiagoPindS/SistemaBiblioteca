@@ -32,4 +32,3 @@ C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-window
 C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.pdb
 C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova POO Abril Ian Pereira.genruntimeconfig.cache
 C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\ref\Prova POO Abril Ian Pereira.dll
-C:\Users\Thiago\source\repos\Prova POO Abril Ian Pereira\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Atencao.resources

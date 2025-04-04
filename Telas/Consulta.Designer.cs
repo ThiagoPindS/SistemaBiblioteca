@@ -30,6 +30,11 @@
         {
             lblTelaDeConsulta = new Label();
             dgvAcervo = new DataGridView();
+            ID = new DataGridViewTextBoxColumn();
+            Titulo = new DataGridViewTextBoxColumn();
+            Autor = new DataGridViewTextBoxColumn();
+            AnoDePublicação = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
             txtTitulo = new TextBox();
             btnRemover = new Button();
             btnEditar = new Button();
@@ -39,7 +44,6 @@
             lblStatus = new Label();
             cbxStatus = new ComboBox();
             btnConsultar = new Button();
-            ID = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvAcervo).BeginInit();
             SuspendLayout();
             // 
@@ -56,14 +60,44 @@
             // dgvAcervo
             // 
             dgvAcervo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAcervo.Columns.AddRange(new DataGridViewColumn[] { ID });
+            dgvAcervo.Columns.AddRange(new DataGridViewColumn[] { ID, Titulo, Autor, AnoDePublicação, Status });
             dgvAcervo.Location = new Point(12, 115);
             dgvAcervo.Name = "dgvAcervo";
             dgvAcervo.ReadOnly = true;
             dgvAcervo.RowHeadersWidth = 51;
-            dgvAcervo.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvAcervo.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvAcervo.Size = new Size(442, 266);
             dgvAcervo.TabIndex = 13;
+            // 
+            // ID
+            // 
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            // 
+            // Titulo
+            // 
+            Titulo.HeaderText = "Título";
+            Titulo.Name = "Titulo";
+            Titulo.ReadOnly = true;
+            // 
+            // Autor
+            // 
+            Autor.HeaderText = "Autor";
+            Autor.Name = "Autor";
+            Autor.ReadOnly = true;
+            // 
+            // AnoDePublicação
+            // 
+            AnoDePublicação.HeaderText = "Ano de Publicação";
+            AnoDePublicação.Name = "AnoDePublicação";
+            AnoDePublicação.ReadOnly = true;
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.ReadOnly = true;
             // 
             // txtTitulo
             // 
@@ -152,12 +186,6 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -195,5 +223,9 @@
         private ComboBox cbxStatus;
         private Button btnConsultar;
         private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Titulo;
+        private DataGridViewTextBoxColumn Autor;
+        private DataGridViewTextBoxColumn AnoDePublicação;
+        private DataGridViewTextBoxColumn Status;
     }
 }

@@ -21,17 +21,13 @@ namespace Prova_POO_Abril_Ian_Pereira
             {
                 livros.Add(new Livro() { ID = livros.Count, Titulo = txtTitulo.Text, Autor = txtAutor.Text, AnoDaPublicacao = txtAno.Text, Status = cbxStatus.SelectedItem.ToString() });
 
-                Atencao atencao = new Atencao();
-                Atencao.instance.lblAviso.Text = "Livro cadastrado com sucesso";
-                atencao.ShowDialog();
+                MessageBox.Show("Livro cadastrado com sucesso");
 
                 LimparCampos();
             }
             else
             {
-                Atencao atencao = new Atencao();
-                Atencao.instance.lblAviso.Text = "Dados insuficientes para cadastro";
-                atencao.ShowDialog();
+                MessageBox.Show("Dados insuficientes para cadastro");
             }
         }
 

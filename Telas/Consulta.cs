@@ -43,7 +43,7 @@ namespace Prova_POO_Abril_Ian_Pereira
         {
             Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
 
-            AtualiazarAcervo();
+            dgvAcervo.Rows.Remove(dgvAcervo.CurrentRow);
         }
 
         private void btnAlterarStatus_Click(object sender, EventArgs e)
@@ -53,7 +53,12 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         public void AtualiazarAcervo()
         {
-            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
+            for(int i = 0; i < Cadastrar.instance.livros.Count; i++)
+            {
+                string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
+
+                dgvAcervo.Rows.Add(linha);
+            }
         }
     }
 }
