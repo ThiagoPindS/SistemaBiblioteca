@@ -41,14 +41,27 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
+             Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
 
             dgvAcervo.Rows.Remove(dgvAcervo.CurrentRow);
         }
 
         private void btnAlterarStatus_Click(object sender, EventArgs e)
         {
+            //var statusSelecionado = dgvAcervo.SelectedCells[0];
 
+            if (dgvAcervo.SelectedCells[0].Value == "Disponível")
+            {
+                dgvAcervo.SelectedCells[0].Value = "Emprestado";
+            }
+            else if (dgvAcervo.SelectedCells[0].Value == "Emprestado")
+            {
+                dgvAcervo.SelectedCells[0].Value = "Disponível";
+            }
+            else
+            {
+                MessageBox.Show("Selecione a opção status");
+            }
         }
 
         public void AtualiazarAcervo()
