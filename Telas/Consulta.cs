@@ -21,7 +21,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             instance = this;
 
-            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
+            AtualiazarAcervo();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -43,12 +43,19 @@ namespace Prova_POO_Abril_Ian_Pereira
         {
             Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
 
-            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
+            AtualiazarAcervo();
         }
 
         private void btnAlterarStatus_Click(object sender, EventArgs e)
         {
+            var Celula = dgvAcervo.CurrentRow.Index;
 
+            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
+        }
+
+        public void AtualiazarAcervo()
+        {
+            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
         }
     }
 }
