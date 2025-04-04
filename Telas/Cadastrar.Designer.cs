@@ -62,6 +62,7 @@
             txtAno.Name = "txtAno";
             txtAno.Size = new Size(168, 23);
             txtAno.TabIndex = 2;
+            txtAno.KeyPress += txtAno_KeyPress;
             // 
             // cbxStatus
             // 

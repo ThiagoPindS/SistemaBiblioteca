@@ -35,15 +35,21 @@
             Autor = new DataGridViewTextBoxColumn();
             AnoDePublicação = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            txtTitulo = new TextBox();
+            txtPesquisar = new TextBox();
             btnRemover = new Button();
             btnEditar = new Button();
             btnAlterarStatus = new Button();
             btnCadastro = new Button();
-            lblTitulo = new Label();
+            lblPesquisar = new Label();
             lblStatus = new Label();
             cbxStatus = new ComboBox();
             btnConsultar = new Button();
+            lblTitulo = new Label();
+            txtTitulo = new TextBox();
+            lblAutor = new Label();
+            txtAutor = new TextBox();
+            lblAnoDaPublicacao = new Label();
+            txtAnoDaPublicacao = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvAcervo).BeginInit();
             SuspendLayout();
             // 
@@ -61,6 +67,7 @@
             // 
             dgvAcervo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAcervo.Columns.AddRange(new DataGridViewColumn[] { ID, Titulo, Autor, AnoDePublicação, Status });
+            dgvAcervo.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAcervo.Location = new Point(12, 115);
             dgvAcervo.Name = "dgvAcervo";
             dgvAcervo.ReadOnly = true;
@@ -68,6 +75,7 @@
             dgvAcervo.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dgvAcervo.Size = new Size(442, 266);
             dgvAcervo.TabIndex = 13;
+            dgvAcervo.CellClick += dgvAcervo_CellClick;
             // 
             // ID
             // 
@@ -99,16 +107,16 @@
             Status.Name = "Status";
             Status.ReadOnly = true;
             // 
-            // txtTitulo
+            // txtPesquisar
             // 
-            txtTitulo.Location = new Point(59, 57);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(220, 23);
-            txtTitulo.TabIndex = 14;
+            txtPesquisar.Location = new Point(78, 57);
+            txtPesquisar.Name = "txtPesquisar";
+            txtPesquisar.Size = new Size(201, 23);
+            txtPesquisar.TabIndex = 14;
             // 
             // btnRemover
             // 
-            btnRemover.Location = new Point(286, 387);
+            btnRemover.Location = new Point(299, 416);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(75, 23);
             btnRemover.TabIndex = 19;
@@ -118,7 +126,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(205, 387);
+            btnEditar.Location = new Point(379, 416);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(75, 23);
             btnEditar.TabIndex = 20;
@@ -128,7 +136,7 @@
             // 
             // btnAlterarStatus
             // 
-            btnAlterarStatus.Location = new Point(367, 387);
+            btnAlterarStatus.Location = new Point(206, 416);
             btnAlterarStatus.Name = "btnAlterarStatus";
             btnAlterarStatus.Size = new Size(87, 23);
             btnAlterarStatus.TabIndex = 21;
@@ -139,7 +147,7 @@
             // btnCadastro
             // 
             btnCadastro.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastro.Location = new Point(12, 416);
+            btnCadastro.Location = new Point(12, 445);
             btnCadastro.Name = "btnCadastro";
             btnCadastro.Size = new Size(442, 68);
             btnCadastro.TabIndex = 22;
@@ -147,15 +155,15 @@
             btnCadastro.UseVisualStyleBackColor = true;
             btnCadastro.Click += btnCadastro_Click;
             // 
-            // lblTitulo
+            // lblPesquisar
             // 
-            lblTitulo.AutoSize = true;
-            lblTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(12, 65);
-            lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(41, 15);
-            lblTitulo.TabIndex = 23;
-            lblTitulo.Text = "Titulo:";
+            lblPesquisar.AutoSize = true;
+            lblPesquisar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPesquisar.Location = new Point(12, 65);
+            lblPesquisar.Name = "lblPesquisar";
+            lblPesquisar.Size = new Size(60, 15);
+            lblPesquisar.TabIndex = 23;
+            lblPesquisar.Text = "Pesquisar:";
             // 
             // lblStatus
             // 
@@ -186,20 +194,74 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Location = new Point(13, 395);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(41, 15);
+            lblTitulo.TabIndex = 28;
+            lblTitulo.Text = "Título:";
+            // 
+            // txtTitulo
+            // 
+            txtTitulo.Location = new Point(59, 387);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(74, 23);
+            txtTitulo.TabIndex = 29;
+            // 
+            // lblAutor
+            // 
+            lblAutor.AutoSize = true;
+            lblAutor.Location = new Point(139, 395);
+            lblAutor.Name = "lblAutor";
+            lblAutor.Size = new Size(40, 15);
+            lblAutor.TabIndex = 30;
+            lblAutor.Text = "Autor:";
+            // 
+            // txtAutor
+            // 
+            txtAutor.Location = new Point(185, 387);
+            txtAutor.Name = "txtAutor";
+            txtAutor.Size = new Size(74, 23);
+            txtAutor.TabIndex = 34;
+            // 
+            // lblAnoDaPublicacao
+            // 
+            lblAnoDaPublicacao.AutoSize = true;
+            lblAnoDaPublicacao.Location = new Point(265, 395);
+            lblAnoDaPublicacao.Name = "lblAnoDaPublicacao";
+            lblAnoDaPublicacao.Size = new Size(109, 15);
+            lblAnoDaPublicacao.TabIndex = 35;
+            lblAnoDaPublicacao.Text = "Ano da Publicação:";
+            // 
+            // txtAnoDaPublicacao
+            // 
+            txtAnoDaPublicacao.Location = new Point(380, 387);
+            txtAnoDaPublicacao.Name = "txtAnoDaPublicacao";
+            txtAnoDaPublicacao.Size = new Size(74, 23);
+            txtAnoDaPublicacao.TabIndex = 36;
+            // 
             // Consulta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(466, 497);
+            ClientSize = new Size(466, 523);
+            Controls.Add(txtAnoDaPublicacao);
+            Controls.Add(lblAnoDaPublicacao);
+            Controls.Add(txtAutor);
+            Controls.Add(lblAutor);
+            Controls.Add(txtTitulo);
+            Controls.Add(lblTitulo);
             Controls.Add(btnConsultar);
             Controls.Add(cbxStatus);
             Controls.Add(lblStatus);
-            Controls.Add(lblTitulo);
+            Controls.Add(lblPesquisar);
             Controls.Add(btnCadastro);
             Controls.Add(btnAlterarStatus);
             Controls.Add(btnEditar);
             Controls.Add(btnRemover);
-            Controls.Add(txtTitulo);
+            Controls.Add(txtPesquisar);
             Controls.Add(dgvAcervo);
             Controls.Add(lblTelaDeConsulta);
             Name = "Consulta";
@@ -213,12 +275,12 @@
 
         private Label lblTelaDeConsulta;
         private DataGridView dgvAcervo;
-        private TextBox txtTitulo;
+        private TextBox txtPesquisar;
         private Button btnRemover;
         private Button btnEditar;
         private Button btnAlterarStatus;
         private Button btnCadastro;
-        private Label lblTitulo;
+        private Label lblPesquisar;
         private Label lblStatus;
         private ComboBox cbxStatus;
         private Button btnConsultar;
@@ -227,5 +289,11 @@
         private DataGridViewTextBoxColumn Autor;
         private DataGridViewTextBoxColumn AnoDePublicação;
         private DataGridViewTextBoxColumn Status;
+        private Label lblTitulo;
+        private TextBox txtTitulo;
+        private Label lblAutor;
+        private TextBox txtAutor;
+        private Label lblAnoDaPublicacao;
+        private TextBox txtAnoDaPublicacao;
     }
 }

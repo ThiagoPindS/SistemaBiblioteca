@@ -36,12 +36,14 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            dgvAcervo.CurrentRow.Cells[1].Value = txtTitulo.Text;
+            dgvAcervo.CurrentRow.Cells[2].Value = txtAutor.Text;
+            dgvAcervo.CurrentRow.Cells[3].Value = txtAnoDaPublicacao.Text;
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-             Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
+            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
 
             dgvAcervo.Rows.Remove(dgvAcervo.CurrentRow);
         }
@@ -66,12 +68,19 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         public void AtualiazarAcervo()
         {
-            for(int i = 0; i < Cadastrar.instance.livros.Count; i++)
+            for (int i = 0; i < Cadastrar.instance.livros.Count; i++)
             {
                 string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
 
                 dgvAcervo.Rows.Add(linha);
             }
+        }
+
+        private void dgvAcervo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTitulo.Text = dgvAcervo.CurrentRow.Cells[1].Value.ToString();
+            txtAutor.Text = dgvAcervo.CurrentRow.Cells[2].Value.ToString();
+            txtAnoDaPublicacao.Text = dgvAcervo.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

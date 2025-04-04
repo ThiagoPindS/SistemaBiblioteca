@@ -55,5 +55,15 @@ namespace Prova_POO_Abril_Ian_Pereira
             txtAutor.Clear();
             cbxStatus.SelectedItem = null;
         }
+
+        private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+
+                MessageBox.Show("Digite apenas números");
+            }
+        }
     }
 }
