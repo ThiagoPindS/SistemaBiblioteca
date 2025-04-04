@@ -21,7 +21,34 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             instance = this;
 
-            dgvAcervo.DataSource = Cadastrar.instance.livros;
+            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastro_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
+
+            dgvAcervo.DataSource = Cadastrar.instance.livros.ToList();
+        }
+
+        private void btnAlterarStatus_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
