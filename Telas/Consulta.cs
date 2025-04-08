@@ -24,11 +24,6 @@ namespace Prova_POO_Abril_Ian_Pereira
             AtualiazarAcervo();
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCadastro_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -66,21 +61,61 @@ namespace Prova_POO_Abril_Ian_Pereira
             }
         }
 
-        public void AtualiazarAcervo()
-        {
-            for (int i = 0; i < Cadastrar.instance.livros.Count; i++)
-            {
-                string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
-
-                dgvAcervo.Rows.Add(linha);
-            }
-        }
-
         private void dgvAcervo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtTitulo.Text = dgvAcervo.CurrentRow.Cells[1].Value.ToString();
             txtAutor.Text = dgvAcervo.CurrentRow.Cells[2].Value.ToString();
             txtAnoDaPublicacao.Text = dgvAcervo.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string status = cbxStatus.Text;
+
+            switch (status)
+            {
+                case "Todos":
+                    {
+                        AtualiazarAcervo();
+                    }
+                    break;
+                case "Disponível":
+                    {
+                        AtualiazarAcervo();
+                    }
+                    break;
+                case "Emprestado":
+                    {
+                        AtualiazarAcervo();
+                    }
+                    break;
+            }
+        }
+
+        public void LimparAcervo()
+        {
+            dgvAcervo.Rows.Clear();
+        }
+
+        public void AtualiazarAcervo()
+        {
+            LimparAcervo();
+
+            for (int i = 0; i < Cadastrar.instance.livros.Count; i++)
+            {
+                if (Cadastrar.instance.livros[i].Status == cbxStatus.Text)
+                {
+                    string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
+
+                    dgvAcervo.Rows.Add(linha);
+                }
+                else if (cbxStatus.Text == "Todos")
+                {
+                    string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
+
+                    dgvAcervo.Rows.Add(linha);
+                }
+            }
         }
     }
 }
