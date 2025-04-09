@@ -36,31 +36,30 @@
             lblAutor = new Label();
             lblAnoDaPublicacao = new Label();
             lblStatus = new Label();
-            btnCadastrarLivro = new Button();
-            btnLimparCampos = new Button();
-            btnConsultaDeLivros = new Button();
-            lblTelaDeCadastro = new Label();
+            this.btnLimpar = new Button();
+            this.btnCadastrar = new Button();
+            btnConsulta = new Button();
             SuspendLayout();
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(136, 68);
+            txtTitulo.Location = new Point(125, 12);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(168, 23);
+            txtTitulo.Size = new Size(447, 23);
             txtTitulo.TabIndex = 0;
             // 
             // txtAutor
             // 
-            txtAutor.Location = new Point(136, 93);
+            txtAutor.Location = new Point(125, 42);
             txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(168, 23);
+            txtAutor.Size = new Size(447, 23);
             txtAutor.TabIndex = 1;
             // 
             // txtAno
             // 
-            txtAno.Location = new Point(136, 119);
+            txtAno.Location = new Point(125, 71);
             txtAno.Name = "txtAno";
-            txtAno.Size = new Size(168, 23);
+            txtAno.Size = new Size(447, 23);
             txtAno.TabIndex = 2;
             txtAno.KeyPress += txtAno_KeyPress;
             // 
@@ -68,15 +67,15 @@
             // 
             cbxStatus.FormattingEnabled = true;
             cbxStatus.Items.AddRange(new object[] { "Disponível", "Emprestado" });
-            cbxStatus.Location = new Point(136, 146);
+            cbxStatus.Location = new Point(125, 100);
             cbxStatus.Name = "cbxStatus";
-            cbxStatus.Size = new Size(168, 23);
+            cbxStatus.Size = new Size(447, 23);
             cbxStatus.TabIndex = 3;
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Location = new Point(10, 74);
+            lblTitulo.Location = new Point(10, 15);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(41, 15);
             lblTitulo.TabIndex = 4;
@@ -85,7 +84,7 @@
             // lblAutor
             // 
             lblAutor.AutoSize = true;
-            lblAutor.Location = new Point(11, 98);
+            lblAutor.Location = new Point(10, 45);
             lblAutor.Name = "lblAutor";
             lblAutor.Size = new Size(40, 15);
             lblAutor.TabIndex = 5;
@@ -94,7 +93,7 @@
             // lblAnoDaPublicacao
             // 
             lblAnoDaPublicacao.AutoSize = true;
-            lblAnoDaPublicacao.Location = new Point(11, 124);
+            lblAnoDaPublicacao.Location = new Point(10, 74);
             lblAnoDaPublicacao.Name = "lblAnoDaPublicacao";
             lblAnoDaPublicacao.Size = new Size(109, 15);
             lblAnoDaPublicacao.TabIndex = 6;
@@ -103,63 +102,50 @@
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(11, 152);
+            lblStatus.Location = new Point(12, 103);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(42, 15);
             lblStatus.TabIndex = 7;
             lblStatus.Text = "Status:";
             // 
-            // btnCadastrarLivro
+            // btnLimpar
             // 
-            btnCadastrarLivro.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCadastrarLivro.Location = new Point(10, 182);
-            btnCadastrarLivro.Name = "btnCadastrarLivro";
-            btnCadastrarLivro.Size = new Size(222, 56);
-            btnCadastrarLivro.TabIndex = 8;
-            btnCadastrarLivro.Text = "Cadastrar Livro";
-            btnCadastrarLivro.UseVisualStyleBackColor = true;
-            btnCadastrarLivro.Click += btnCadastrarLivro_Click;
+            this.btnLimpar.Location = new Point(470, 129);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new Size(102, 23);
+            this.btnLimpar.TabIndex = 11;
+            this.btnLimpar.Text = "Limpar Campos";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += this.btnLimpar_Click;
             // 
-            // btnLimparCampos
+            // btnCadastrar
             // 
-            btnLimparCampos.Location = new Point(238, 182);
-            btnLimparCampos.Name = "btnLimparCampos";
-            btnLimparCampos.Size = new Size(65, 56);
-            btnLimparCampos.TabIndex = 9;
-            btnLimparCampos.Text = "Limpar Campos";
-            btnLimparCampos.UseVisualStyleBackColor = true;
-            btnLimparCampos.Click += btnLimparCampos_Click;
+            this.btnCadastrar.Location = new Point(362, 129);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new Size(102, 23);
+            this.btnCadastrar.TabIndex = 12;
+            this.btnCadastrar.Text = "Cadastrar Livro";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += this.btnCadastrar_Click;
             // 
-            // btnConsultaDeLivros
+            // btnConsulta
             // 
-            btnConsultaDeLivros.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConsultaDeLivros.Location = new Point(10, 253);
-            btnConsultaDeLivros.Name = "btnConsultaDeLivros";
-            btnConsultaDeLivros.Size = new Size(291, 56);
-            btnConsultaDeLivros.TabIndex = 10;
-            btnConsultaDeLivros.Text = "ConsultaDeLivros";
-            btnConsultaDeLivros.UseVisualStyleBackColor = true;
-            btnConsultaDeLivros.Click += btnConsulta_Click;
-            // 
-            // lblTelaDeCadastro
-            // 
-            lblTelaDeCadastro.AutoSize = true;
-            lblTelaDeCadastro.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTelaDeCadastro.Location = new Point(21, 9);
-            lblTelaDeCadastro.Name = "lblTelaDeCadastro";
-            lblTelaDeCadastro.Size = new Size(267, 45);
-            lblTelaDeCadastro.TabIndex = 11;
-            lblTelaDeCadastro.Text = "Tela de Cadastro";
+            btnConsulta.Location = new Point(451, 426);
+            btnConsulta.Name = "btnConsulta";
+            btnConsulta.Size = new Size(121, 23);
+            btnConsulta.TabIndex = 38;
+            btnConsulta.Text = "Ir Para Consulta";
+            btnConsulta.UseVisualStyleBackColor = true;
+            btnConsulta.Click += btnConsulta_Click;
             // 
             // Cadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(315, 318);
-            Controls.Add(lblTelaDeCadastro);
-            Controls.Add(btnConsultaDeLivros);
-            Controls.Add(btnLimparCampos);
-            Controls.Add(btnCadastrarLivro);
+            ClientSize = new Size(584, 461);
+            Controls.Add(btnConsulta);
+            Controls.Add(this.btnCadastrar);
+            Controls.Add(this.btnLimpar);
             Controls.Add(lblStatus);
             Controls.Add(lblAnoDaPublicacao);
             Controls.Add(lblAutor);
@@ -169,7 +155,7 @@
             Controls.Add(txtAutor);
             Controls.Add(txtTitulo);
             Name = "Cadastrar";
-            Text = "BiblioSystem";
+            Text = "Gestão Biblioteca | Cadastro";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -184,9 +170,8 @@
         private Label lblAutor;
         private Label lblAnoDaPublicacao;
         private Label lblStatus;
-        private Button btnCadastrarLivro;
-        private Button btnLimparCampos;
-        private Button btnConsultaDeLivros;
-        private Label lblTelaDeCadastro;
+        private Button btnCadastrar;
+        private Button btnLimpar;
+        private Button btnConsulta;
     }
 }

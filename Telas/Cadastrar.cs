@@ -19,14 +19,14 @@ namespace Prova_POO_Abril_Ian_Pereira
             instance = this;
         }
 
-        private void btnCadastrarLivro_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
             AcervoDeLivros.CadastrarLivro(txtTitulo.Text, txtAutor.Text, int.Parse(txtAno.Text), cbxStatus.Text);
 
             LimparCampos();
         }
 
-        private void btnLimparCampos_Click(object sender, EventArgs e)
+        private void btnLimpar_Click(object sender, EventArgs e)
         {
             LimparCampos();
         }
