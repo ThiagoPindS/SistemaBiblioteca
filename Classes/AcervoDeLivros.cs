@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,11 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
             {
                 acervo.Add(new Livro() { ID = acervo.Count, Titulo = titulo, Autor = autor, AnoDaPublicacao = ano, Status = status });
 
-                MessageBox.Show("Livro cadastrado com sucesso");
+                MessageBox.Show("Livro cadastrado com sucesso", "Êxito", MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Dados insuficientes para cadastro");
+                MessageBox.Show("Dados insuficientes para cadastro", "Erro", MessageBoxButtons.OK);
             }
         }
 
@@ -30,13 +31,13 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
         {
             switch (origem)
             {
-                case "todos":
+                case "Todos":
                     {
                         livrosFiltrados = acervo;
                     }
                     break;
 
-                case "filtroPesquisa":
+                case "FiltroPesquisa":
                     {
                         if (Consulta.instance.txtPesquisar != null)
                         {
@@ -46,20 +47,22 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
                     }
                     break;
 
-                case "filtroDisponivel":
+                case "Disponivel":
                     {
                         livrosFiltrados = acervo.Where(l => l.Status.ToLower() == "disponível").ToList();
                     }
                     break;
 
-                case "filtroEmprestado":
+                case "Emprestado":
                     {
                         livrosFiltrados = acervo.Where(l => l.Status.ToLower() == "emprestado").ToList();
                     }
                     break;
             }
 
-            Consulta.instance.dgvAcervo.DataSource = livrosFiltrados;
+        Consulta.instance.dgvAcervo.DataSource = null;
+
+        Consulta.instance.dgvAcervo.DataSource = livrosFiltrados;
         }
     }
 }

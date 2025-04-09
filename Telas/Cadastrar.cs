@@ -49,7 +49,7 @@ namespace Prova_POO_Abril_Ian_Pereira
             {
                 e.Handled = true;
 
-                MessageBox.Show("Digite apenas números");
+                MessageBox.Show("Digite apenas números", "Erro", MessageBoxButtons.OK);
             }
         }
 

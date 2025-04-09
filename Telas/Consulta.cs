@@ -21,7 +21,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             instance = this;
 
-            AcervoDeLivros.CarregarAcervo("todos");
+            AcervoDeLivros.CarregarAcervo("Todos");
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -31,33 +31,49 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            dgvAcervo.CurrentRow.Cells[1].Value = txtTitulo.Text;
-            dgvAcervo.CurrentRow.Cells[2].Value = txtAutor.Text;
-            dgvAcervo.CurrentRow.Cells[3].Value = txtAnoDaPublicacao.Text;
+            var result = MessageBox.Show("Tem certeza que deseja editar esse livro?", "Confirmação", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                dgvAcervo.CurrentRow.Cells[1].Value = txtTitulo.Text;
+                dgvAcervo.CurrentRow.Cells[2].Value = txtAutor.Text;
+                dgvAcervo.CurrentRow.Cells[3].Value = txtAnoDaPublicacao.Text;
+            }
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            Cadastrar.instance.livros.RemoveAt(dgvAcervo.CurrentRow.Index);
+            if (dgvAcervo.CurrentRow != null)
+            {
+                var result = MessageBox.Show("Tem certeza que deseja remover este livro?", "Confirmação", MessageBoxButtons.YesNo);
 
-            dgvAcervo.Rows.Remove(dgvAcervo.CurrentRow);
+                if (result == DialogResult.Yes)
+                {
+                    AcervoDeLivros.acervo.RemoveAt(dgvAcervo.CurrentRow.Index);
+
+                    AcervoDeLivros.CarregarAcervo("Todos");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum livro selecionado para remoção.", "Erro", MessageBoxButtons.OK);
+            }
         }
 
         private void btnAlterarStatus_Click(object sender, EventArgs e)
         {
-            //var statusSelecionado = dgvAcervo.SelectedCells[0];
+            var result = MessageBox.Show("Tem certeza que deseja altrar o status desse livro?", "Confirmação", MessageBoxButtons.YesNo);
 
-            if (dgvAcervo.SelectedCells[0].Value == "Disponível")
+            if (result == DialogResult.Yes)
             {
-                dgvAcervo.SelectedCells[0].Value = "Emprestado";
-            }
-            else if (dgvAcervo.SelectedCells[0].Value == "Emprestado")
-            {
-                dgvAcervo.SelectedCells[0].Value = "Disponível";
-            }
-            else
-            {
-                MessageBox.Show("Selecione a opção status");
+                if (dgvAcervo.CurrentRow.Cells[4].Value == "Disponível")
+                {
+                    dgvAcervo.CurrentRow.Cells[4].Value = "Emprestado";
+                }
+                else
+                {
+                    dgvAcervo.CurrentRow.Cells[4].Value = "Disponível";
+                }
             }
         }
 
@@ -70,31 +86,12 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string status = cbxStatus.Text;
-
-            switch (status)
-            {
-                case "Todos":
-                    {
-                        AcervoDeLivros.CarregarAcervo("todos");
-                    }
-                    break;
-                case "Disponível":
-                    {
-                        AcervoDeLivros.CarregarAcervo("filtroDisponivel");
-                    }
-                    break;
-                case "Emprestado":
-                    {
-                        AcervoDeLivros.CarregarAcervo("filtroEmprestado");
-                    }
-                    break;
-            }
+            AcervoDeLivros.CarregarAcervo(cbxStatus.Text);
         }
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            AcervoDeLivros.CarregarAcervo("filtroPesquisa");
+            AcervoDeLivros.CarregarAcervo("FiltroPesquisa");
         }
     }
 }
