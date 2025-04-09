@@ -21,7 +21,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnCadastrarLivro_Click(object sender, EventArgs e)
         {
-            AcervoDeLivros.CadastrarLivro(txtTitulo.Text, txtAutor.Text, txtAno.Text, cbxStatus.Text);
+            AcervoDeLivros.CadastrarLivro(txtTitulo.Text, txtAutor.Text, int.Parse(txtAno.Text), cbxStatus.Text);
 
             LimparCampos();
         }

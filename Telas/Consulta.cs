@@ -21,7 +21,9 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             instance = this;
 
-            AcervoDeLivros.CarregarAcervo("Todos");
+            AcervoDeLivros.CarregarAcervo();
+
+            AcervoDeLivros.ExibirAcervo("Todos");
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -49,9 +51,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
                 if (result == DialogResult.Yes)
                 {
-                    AcervoDeLivros.acervo.RemoveAt(dgvAcervo.CurrentRow.Index);
-
-                    AcervoDeLivros.CarregarAcervo("Todos");
+                    AcervoDeLivros.ExcluirLivro(dgvAcervo.CurrentRow.Index);
                 }
             }
             else
@@ -86,12 +86,12 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AcervoDeLivros.CarregarAcervo(cbxStatus.Text);
+            AcervoDeLivros.ExibirAcervo(cbxStatus.Text);
         }
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            AcervoDeLivros.CarregarAcervo("FiltroPesquisa");
+            AcervoDeLivros.ExibirAcervo("FiltroPesquisa");
         }
     }
 }

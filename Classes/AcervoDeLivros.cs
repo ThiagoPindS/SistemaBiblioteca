@@ -13,11 +13,13 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
 
         static public List<Livro> livrosFiltrados = new List<Livro>();
 
-        static public void CadastrarLivro(string? titulo, string? autor, string? ano, string? status)
+        public static void CadastrarLivro(string titulo, string autor, int anoPublicacao, string status)
         {
-            if (titulo != "" && autor != "" && ano != "" && status != "")
+            if (titulo != "" && autor != "" && anoPublicacao != 0 && status != "")
             {
-                acervo.Add(new Livro() { ID = acervo.Count, Titulo = titulo, Autor = autor, AnoDaPublicacao = ano, Status = status });
+                acervo.Add(new Livro(titulo, autor, anoPublicacao, status));
+
+                SalvarAcervo();
 
                 MessageBox.Show("Livro cadastrado com sucesso", "Êxito", MessageBoxButtons.OK);
             }
@@ -27,7 +29,18 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
             }
         }
 
-        static public void CarregarAcervo(string origem)
+        public static void ExcluirLivro(int index)
+        {
+            acervo.RemoveAt(index);
+
+            SalvarAcervo();
+
+            CarregarAcervo();
+
+            ExibirAcervo("Todos");
+        }
+
+        public static void ExibirAcervo(string origem)
         {
             switch (origem)
             {
@@ -60,9 +73,43 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
                     break;
             }
 
-        Consulta.instance.dgvAcervo.DataSource = null;
+            Consulta.instance.dgvAcervo.DataSource = null;
 
-        Consulta.instance.dgvAcervo.DataSource = livrosFiltrados;
+            Consulta.instance.dgvAcervo.DataSource = livrosFiltrados;
+        }
+
+        public static void SalvarAcervo()
+        {
+            using (StreamWriter writer = new StreamWriter("Acervo.txt"))
+            {
+                foreach (var livro in acervo)
+                {
+                    writer.WriteLine(livro.ToString());
+                }
+            }
+        }
+
+        public static void CarregarAcervo()
+        {
+            acervo.Clear();
+
+            using (StreamReader reader = new StreamReader("Acervo.txt"))
+            {
+                string linha;
+
+                while ((linha = reader.ReadLine()) != null)
+                {
+                    var partes = linha.Split(';');
+
+                    if (partes.Length == 4)
+                    {
+                        var livro = new Livro(partes[0], partes[1], int.Parse(partes[2]), partes[3]);
+
+                        acervo.Add(livro);
+                    }
+                }
+            }
         }
     }
 }
+    
