@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
 using Prova_POO_Abril_Ian_Pereira.Classes;
 
 namespace Prova_POO_Abril_Ian_Pereira
@@ -17,18 +21,9 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnCadastrarLivro_Click(object sender, EventArgs e)
         {
-            if (txtTitulo.Text != "" && txtAutor.Text != "" && txtAno.Text != "" && cbxStatus.SelectedItem.ToString() != "")
-            {
-                livros.Add(new Livro() { ID = livros.Count, Titulo = txtTitulo.Text, Autor = txtAutor.Text, AnoDaPublicacao = txtAno.Text, Status = cbxStatus.SelectedItem.ToString() });
+            AcervoDeLivros.CadastrarLivro(txtTitulo.Text, txtAutor.Text, txtAno.Text, cbxStatus.Text);
 
-                MessageBox.Show("Livro cadastrado com sucesso");
-
-                LimparCampos();
-            }
-            else
-            {
-                MessageBox.Show("Dados insuficientes para cadastro");
-            }
+            LimparCampos();
         }
 
         private void btnLimparCampos_Click(object sender, EventArgs e)
@@ -48,14 +43,6 @@ namespace Prova_POO_Abril_Ian_Pereira
             }
         }
 
-        public void LimparCampos()
-        {
-            txtTitulo.Clear();
-            txtAno.Clear();
-            txtAutor.Clear();
-            cbxStatus.SelectedItem = null;
-        }
-
         private void txtAno_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -64,6 +51,14 @@ namespace Prova_POO_Abril_Ian_Pereira
 
                 MessageBox.Show("Digite apenas números");
             }
+        }
+
+        public void LimparCampos()
+        {
+            txtTitulo.Clear();
+            txtAno.Clear();
+            txtAutor.Clear();
+            cbxStatus.SelectedItem = null;
         }
     }
 }

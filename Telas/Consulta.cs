@@ -21,7 +21,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             instance = this;
 
-            AtualiazarAcervo();
+            AcervoDeLivros.CarregarAcervo("todos");
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -76,46 +76,25 @@ namespace Prova_POO_Abril_Ian_Pereira
             {
                 case "Todos":
                     {
-                        AtualiazarAcervo();
+                        AcervoDeLivros.CarregarAcervo("todos");
                     }
                     break;
                 case "Disponível":
                     {
-                        AtualiazarAcervo();
+                        AcervoDeLivros.CarregarAcervo("filtroDisponivel");
                     }
                     break;
                 case "Emprestado":
                     {
-                        AtualiazarAcervo();
+                        AcervoDeLivros.CarregarAcervo("filtroEmprestado");
                     }
                     break;
             }
         }
 
-        public void LimparAcervo()
+        private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
-            dgvAcervo.Rows.Clear();
-        }
-
-        public void AtualiazarAcervo()
-        {
-            LimparAcervo();
-
-            for (int i = 0; i < Cadastrar.instance.livros.Count; i++)
-            {
-                if (Cadastrar.instance.livros[i].Status == cbxStatus.Text)
-                {
-                    string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
-
-                    dgvAcervo.Rows.Add(linha);
-                }
-                else if (cbxStatus.Text == "Todos")
-                {
-                    string[] linha = new string[] { Cadastrar.instance.livros[i].ID.ToString(), Cadastrar.instance.livros[i].Titulo, Cadastrar.instance.livros[i].Autor, Cadastrar.instance.livros[i].AnoDaPublicacao, Cadastrar.instance.livros[i].Status };
-
-                    dgvAcervo.Rows.Add(linha);
-                }
-            }
+            AcervoDeLivros.CarregarAcervo("filtroPesquisa");
         }
     }
 }

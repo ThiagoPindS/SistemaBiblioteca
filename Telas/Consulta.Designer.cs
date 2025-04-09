@@ -30,11 +30,6 @@
         {
             lblTelaDeConsulta = new Label();
             dgvAcervo = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Titulo = new DataGridViewTextBoxColumn();
-            Autor = new DataGridViewTextBoxColumn();
-            AnoDePublicação = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
             txtPesquisar = new TextBox();
             btnRemover = new Button();
             btnEditar = new Button();
@@ -66,7 +61,6 @@
             // 
             dgvAcervo.AllowUserToAddRows = false;
             dgvAcervo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAcervo.Columns.AddRange(new DataGridViewColumn[] { ID, Titulo, Autor, AnoDePublicação, Status });
             dgvAcervo.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAcervo.Location = new Point(12, 86);
             dgvAcervo.Name = "dgvAcervo";
@@ -78,42 +72,13 @@
             dgvAcervo.TabIndex = 13;
             dgvAcervo.CellClick += dgvAcervo_CellClick;
             // 
-            // ID
-            // 
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            ID.ReadOnly = true;
-            // 
-            // Titulo
-            // 
-            Titulo.HeaderText = "Título";
-            Titulo.Name = "Titulo";
-            Titulo.ReadOnly = true;
-            // 
-            // Autor
-            // 
-            Autor.HeaderText = "Autor";
-            Autor.Name = "Autor";
-            Autor.ReadOnly = true;
-            // 
-            // AnoDePublicação
-            // 
-            AnoDePublicação.HeaderText = "Ano de Publicação";
-            AnoDePublicação.Name = "AnoDePublicação";
-            AnoDePublicação.ReadOnly = true;
-            // 
-            // Status
-            // 
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
-            Status.ReadOnly = true;
-            // 
             // txtPesquisar
             // 
             txtPesquisar.Location = new Point(78, 57);
             txtPesquisar.Name = "txtPesquisar";
             txtPesquisar.Size = new Size(201, 23);
             txtPesquisar.TabIndex = 14;
+            txtPesquisar.TextChanged += txtPesquisar_TextChanged;
             // 
             // btnRemover
             // 
@@ -266,8 +231,8 @@
         #endregion
 
         private Label lblTelaDeConsulta;
-        private DataGridView dgvAcervo;
-        private TextBox txtPesquisar;
+        public DataGridView dgvAcervo;
+        public TextBox txtPesquisar;
         private Button btnRemover;
         private Button btnEditar;
         private Button btnAlterarStatus;
@@ -275,11 +240,6 @@
         private Label lblPesquisar;
         private Label lblStatus;
         private ComboBox cbxStatus;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Titulo;
-        private DataGridViewTextBoxColumn Autor;
-        private DataGridViewTextBoxColumn AnoDePublicação;
-        private DataGridViewTextBoxColumn Status;
         private Label lblTitulo;
         private TextBox txtTitulo;
         private Label lblAutor;
