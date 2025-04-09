@@ -36,8 +36,8 @@
             lblAutor = new Label();
             lblAnoDaPublicacao = new Label();
             lblStatus = new Label();
-            this.btnLimpar = new Button();
-            this.btnCadastrar = new Button();
+            btnLimpar = new Button();
+            btnCadastrar = new Button();
             btnConsulta = new Button();
             SuspendLayout();
             // 
@@ -110,23 +110,23 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new Point(470, 129);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new Size(102, 23);
-            this.btnLimpar.TabIndex = 11;
-            this.btnLimpar.Text = "Limpar Campos";
-            this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += this.btnLimpar_Click;
+            btnLimpar.Location = new Point(470, 129);
+            btnLimpar.Name = "btnLimpar";
+            btnLimpar.Size = new Size(102, 23);
+            btnLimpar.TabIndex = 11;
+            btnLimpar.Text = "Limpar Campos";
+            btnLimpar.UseVisualStyleBackColor = true;
+            btnLimpar.Click += btnLimpar_Click;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new Point(362, 129);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new Size(102, 23);
-            this.btnCadastrar.TabIndex = 12;
-            this.btnCadastrar.Text = "Cadastrar Livro";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += this.btnCadastrar_Click;
+            btnCadastrar.Location = new Point(362, 129);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(102, 23);
+            btnCadastrar.TabIndex = 12;
+            btnCadastrar.Text = "Cadastrar Livro";
+            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnConsulta
             // 
@@ -142,10 +142,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 255, 255);
             ClientSize = new Size(584, 461);
             Controls.Add(btnConsulta);
-            Controls.Add(this.btnCadastrar);
-            Controls.Add(this.btnLimpar);
+            Controls.Add(btnCadastrar);
+            Controls.Add(btnLimpar);
             Controls.Add(lblStatus);
             Controls.Add(lblAnoDaPublicacao);
             Controls.Add(lblAutor);
@@ -155,6 +156,7 @@
             Controls.Add(txtAutor);
             Controls.Add(txtTitulo);
             Name = "Cadastrar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestão Biblioteca | Cadastro";
             ResumeLayout(false);
             PerformLayout();

@@ -59,15 +59,5 @@ namespace Prova_POO_Abril_Ian_Pereira.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bg_01 {
-            get {
-                object obj = ResourceManager.GetObject("bg_01", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

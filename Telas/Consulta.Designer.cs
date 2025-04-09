@@ -49,6 +49,8 @@
             // dgvAcervo
             // 
             dgvAcervo.AllowUserToAddRows = false;
+            dgvAcervo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAcervo.BackgroundColor = Color.FromArgb(192, 192, 255);
             dgvAcervo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAcervo.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvAcervo.Location = new Point(12, 41);
@@ -192,6 +194,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(192, 255, 255);
             ClientSize = new Size(584, 461);
             Controls.Add(btnCadastro);
             Controls.Add(txtAnoDaPublicacao);
@@ -209,6 +212,7 @@
             Controls.Add(txtPesquisar);
             Controls.Add(dgvAcervo);
             Name = "Consulta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gestão Biblioteca | Consulta";
             Click += btnCadastro_Click;
             ((System.ComponentModel.ISupportInitialize)dgvAcervo).EndInit();

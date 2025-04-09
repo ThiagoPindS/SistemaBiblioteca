@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prova_POO_Abril_Ian_Pereira.Classes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Prova_POO_Abril_Ian_Pereira
 {
@@ -37,9 +38,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             if (result == DialogResult.Yes)
             {
-                dgvAcervo.CurrentRow.Cells[1].Value = txtTitulo.Text;
-                dgvAcervo.CurrentRow.Cells[2].Value = txtAutor.Text;
-                dgvAcervo.CurrentRow.Cells[3].Value = txtAnoDaPublicacao.Text;
+                AcervoDeLivros.EditarAcervo(txtTitulo.Text, txtAutor.Text, int.Parse(txtAnoDaPublicacao.Text));
             }
         }
 
@@ -66,22 +65,24 @@ namespace Prova_POO_Abril_Ian_Pereira
 
             if (result == DialogResult.Yes)
             {
-                if (dgvAcervo.CurrentRow.Cells[4].Value == "Disponível")
+                AcervoDeLivros.AlterarStatus();
+
+                /*if (dgvAcervo.CurrentRow.Cells[3].Value == "Disponível")
                 {
-                    dgvAcervo.CurrentRow.Cells[4].Value = "Emprestado";
+                    dgvAcervo.CurrentRow.Cells[3].Value = "Emprestado";
                 }
                 else
                 {
-                    dgvAcervo.CurrentRow.Cells[4].Value = "Disponível";
-                }
+                    dgvAcervo.CurrentRow.Cells[3].Value = "Disponível";
+                }*/
             }
         }
 
         private void dgvAcervo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTitulo.Text = dgvAcervo.CurrentRow.Cells[1].Value.ToString();
-            txtAutor.Text = dgvAcervo.CurrentRow.Cells[2].Value.ToString();
-            txtAnoDaPublicacao.Text = dgvAcervo.CurrentRow.Cells[3].Value.ToString();
+            txtTitulo.Text = dgvAcervo.CurrentRow.Cells[0].Value.ToString();
+            txtAutor.Text = dgvAcervo.CurrentRow.Cells[1].Value.ToString();
+            txtAnoDaPublicacao.Text = dgvAcervo.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void cbxStatus_SelectedIndexChanged(object sender, EventArgs e)

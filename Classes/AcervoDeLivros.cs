@@ -40,6 +40,15 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
             ExibirAcervo("Todos");
         }
 
+        public static void EditarAcervo(string titulo, string autor, int ano)
+        {
+            Consulta.instance.dgvAcervo.CurrentRow.Cells[0].Value = titulo;
+            Consulta.instance.dgvAcervo.CurrentRow.Cells[1].Value = autor;
+            Consulta.instance.dgvAcervo.CurrentRow.Cells[2].Value = ano;
+
+            SalvarAcervo();
+        }
+
         public static void ExibirAcervo(string origem)
         {
             switch (origem)
@@ -54,8 +63,8 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
                     {
                         if (Consulta.instance.txtPesquisar != null)
                         {
-                            string busca = Consulta.instance.txtPesquisar.Text.ToLower();
-                            livrosFiltrados = acervo.Where(l => l.Titulo.ToLower().Contains(busca)).ToList();
+                            string busca = Consulta.instance.txtPesquisar.Text.ToLower().Trim();
+                            livrosFiltrados = acervo.Where(l => l.Titulo.ToLower().Trim().Contains(busca)).ToList();
                         }
                     }
                     break;
@@ -109,6 +118,22 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
                     }
                 }
             }
+        }
+
+        public static void AlterarStatus()
+        {
+            if (Consulta.instance.dgvAcervo.CurrentRow.Cells[3].Value.ToString() == "Disponível")
+            {
+                Consulta.instance.dgvAcervo.CurrentRow.Cells[3].Value = "Emprestado";
+            }
+            else
+            {
+                Consulta.instance.dgvAcervo.CurrentRow.Cells[3].Value = "Disponível";
+            }
+
+            SalvarAcervo();
+
+            CarregarAcervo();
         }
     }
 }

@@ -66,3 +66,4 @@ C:\Users\Thiago\source\repos\SistemaBiblioteca-master\bin\Debug\net8.0-windows\G
 C:\Users\Thiago\source\repos\SistemaBiblioteca-master\bin\Debug\net8.0-windows\GestaoBiblioteca.pdb
 C:\Users\Thiago\source\repos\SistemaBiblioteca-master\obj\Debug\net8.0-windows\GestaoBiblioteca.genruntimeconfig.cache
 C:\Users\Thiago\source\repos\SistemaBiblioteca-master\obj\Debug\net8.0-windows\ref\GestaoBiblioteca.dll
+C:\Users\Thiago\source\repos\GestaoBiblioteca\obj\Debug\net8.0-windows\Prova_POO_Abril_Ian_Pereira.Properties.Resources.resources
