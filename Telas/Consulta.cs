@@ -34,7 +34,7 @@ namespace Prova_POO_Abril_Ian_Pereira
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Tem certeza que deseja editar esse livro?", "Confirmação", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Tem certeza que deseja editar esse livro?", "Confirmação", MessageBoxButtons.YesNo); 
 
             if (result == DialogResult.Yes)
             {
@@ -66,15 +66,6 @@ namespace Prova_POO_Abril_Ian_Pereira
             if (result == DialogResult.Yes)
             {
                 AcervoDeLivros.AlterarStatus();
-
-                /*if (dgvAcervo.CurrentRow.Cells[3].Value == "Disponível")
-                {
-                    dgvAcervo.CurrentRow.Cells[3].Value = "Emprestado";
-                }
-                else
-                {
-                    dgvAcervo.CurrentRow.Cells[3].Value = "Disponível";
-                }*/
             }
         }
 

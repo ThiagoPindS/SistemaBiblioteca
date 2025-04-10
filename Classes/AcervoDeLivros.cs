@@ -69,7 +69,7 @@ namespace Prova_POO_Abril_Ian_Pereira.Classes
                     }
                     break;
 
-                case "Disponivel":
+                case "Disponível":
                     {
                         livrosFiltrados = acervo.Where(l => l.Status.ToLower() == "disponível").ToList();
                     }
